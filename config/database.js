@@ -6,15 +6,15 @@ module.exports = ({ env }) => ({
     connection: {
       host: config.host,
       port: config.port,
+      app: {
+        keys: env.array('APP_KEYS') || 129000,
+      },
       database: config.database,
       user: config.user,
       password: config.password,
       ssl: {
         rejectUnauthorized: false
       },
-    },
-    app: {
-      keys: env.array('APP_KEYS') || 129000,
     },
     debug: false,
   },
